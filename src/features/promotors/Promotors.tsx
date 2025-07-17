@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import SectionTitle from '../components/common/SectionTitle';
-import Tabs from '../components/common/Tabs';
-import Card from '../components/common/Card';
+import SectionTitle from '../../shared/components/SectionTitle';
+import Card from '../../shared/components/Card';
+import Tabs from '../../shared/components/Tabs';
 
 
-const Promotores = () => {
+const Promotors = () => {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -38,10 +38,10 @@ const Promotores = () => {
       content: (
         <div>
           <p className="mb-6">
-            Programa dirigido a estudiantes de instituciones educativas que desean convertirse en líderes ambientales 
+            Programa dirigido a estudiantes de instituciones educativas que desean convertirse en líderes ambientales
             dentro de su comunidad escolar.
           </p>
-          
+
           <h3 className="text-xl font-semibold mb-4">Instituciones con PAE</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {[...Array(8)].map((_, i) => (
@@ -50,7 +50,7 @@ const Promotores = () => {
               </div>
             ))}
           </div>
-          
+
           <button className="btn-primary">
             Únete al programa PAE
           </button>
@@ -63,7 +63,7 @@ const Promotores = () => {
       content: (
         <div>
           <p className="mb-6">
-            Programa para jóvenes entre 18 y 25 años interesados en liderar proyectos ambientales 
+            Programa para jóvenes entre 18 y 25 años interesados en liderar proyectos ambientales
             en sus comunidades.
           </p>
           <div className="bg-green-50 p-6 rounded-lg mb-6">
@@ -85,7 +85,7 @@ const Promotores = () => {
           <p className="mb-6">
             Programa para adultos comprometidos con el desarrollo sostenible de sus comunidades.
           </p>
-          
+
           <h3 className="text-xl font-semibold mb-4">Próximas Capacitaciones</h3>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white">
@@ -127,21 +127,21 @@ const Promotores = () => {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <SectionTitle 
-        title="Sé Parte del Cambio: Conviértete en un Promotor Ambiental" 
+      <SectionTitle
+        title="Sé Parte del Cambio: Conviértete en un Promotor Ambiental"
         subtitle="Únete a nuestra red de agentes de cambio ambiental"
       />
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <Tabs tabs={promotoresTabs} />
         </div>
-        
+
         <div>
           <Card className="p-6">
             <h3 className="text-xl font-bold mb-4 text-center">¿Interesado en ser promotor?</h3>
             <p className="text-center mb-6">Completa el formulario y nos pondremos en contacto contigo</p>
-            
+
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label className="block text-gray-700 mb-2">Nombre completo</label>
@@ -154,7 +154,7 @@ const Promotores = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-gray-700 mb-2">Correo electrónico</label>
                 <input
@@ -166,7 +166,7 @@ const Promotores = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-gray-700 mb-2">Teléfono</label>
                 <input
@@ -177,7 +177,7 @@ const Promotores = () => {
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-gray-700 mb-2">Tipo de promotor</label>
                 <select
@@ -193,7 +193,7 @@ const Promotores = () => {
                   <option value="pac">Promotor Ambiental Comunitario (PAC)</option>
                 </select>
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-gray-700 mb-2">Mensaje (opcional)</label>
                 <textarea
@@ -204,8 +204,8 @@ const Promotores = () => {
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 ></textarea>
               </div>
-              
-              <button 
+
+              <button
                 type="submit"
                 className="w-full btn-primary"
               >
@@ -219,4 +219,4 @@ const Promotores = () => {
   );
 };
 
-export default Promotores;
+export default Promotors;

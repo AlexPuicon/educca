@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import Card from '../components/common/Card';
-import HeroVideo from '../components/pages/HeroVideo';
-import SectionTitle from '../components/common/SectionTitle';
+import HeroVideo from '../../shared/components/HeroVideo';
+import SectionTitle from '../../shared/components/SectionTitle';
+import Card from '../../shared/components/Card';
 
 const Home = () => {
   const quickLinks = [

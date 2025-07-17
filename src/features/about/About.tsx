@@ -1,6 +1,6 @@
-import Card from '../components/common/Card';
-import SectionTitle from '../components/common/SectionTitle';
-import Tabs from '../components/common/Tabs';
+import Card from "../../shared/components/Card";
+import SectionTitle from "../../shared/components/SectionTitle";
+import Tabs from "../../shared/components/Tabs";
 
 
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
       content: (
         <div>
           <p className="mb-4">
-            Programa dirigido a instituciones educativas para integrar la educación ambiental en el currículo escolar 
+            Programa dirigido a instituciones educativas para integrar la educación ambiental en el currículo escolar
             y promover prácticas sostenibles.
           </p>
           <h3 className="text-xl font-semibold mb-4">Logros 2025</h3>
@@ -52,7 +52,7 @@ const About = () => {
       content: (
         <div>
           <p className="mb-4">
-            Iniciativas para involucrar a la comunidad en la protección ambiental a través de talleres, 
+            Iniciativas para involucrar a la comunidad en la protección ambiental a través de talleres,
             proyectos y actividades participativas.
           </p>
           <h3 className="text-xl font-semibold mb-4">Proyectos Clave</h3>
@@ -70,8 +70,8 @@ const About = () => {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <SectionTitle 
-        title="Nuestro Compromiso con la Sostenibilidad de Tambopata" 
+      <SectionTitle
+        title="Nuestro Compromiso con la Sostenibilidad de Tambopata"
         subtitle="Conoce nuestra misión, visión y líneas de acción"
       />
 
@@ -84,12 +84,12 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Misión</h3>
               <p>
-                Promover una cultura ambiental sostenible en Tambopata a través de la educación, 
+                Promover una cultura ambiental sostenible en Tambopata a través de la educación,
                 participación ciudadana y gestión de proyectos ambientales.
               </p>
             </div>
           </Card>
-          
+
           <Card className="p-8">
             <div className="text-center">
               <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -97,7 +97,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Visión</h3>
               <p>
-                Ser el referente en educación ambiental a nivel regional, logrando una ciudadanía 
+                Ser el referente en educación ambiental a nivel regional, logrando una ciudadanía
                 comprometida con el desarrollo sostenible de Tambopata.
               </p>
             </div>
