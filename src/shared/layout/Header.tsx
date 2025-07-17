@@ -1,53 +1,83 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/about', label: 'Acerca de EDUCCA' },
+  {
+    label: 'Promotores',
+    children: [
+      { href: '/promotors', label: 'Promotores Ambientales' },
+      { href: '/promotores-voluntarios', label: 'Voluntarios' },
+    ],
+  },
+  {
+    label: 'Contenido',
+    children: [
+      { href: '/campanias-eventos', label: 'Campañas y Eventos' },
+      { href: '/espacios-educativos', label: 'Espacios Educativos' },
+      { href: '/recursos', label: 'Recursos' },
+      { href: '/galeria', label: 'Galería' },
+      { href: '/noticias', label: 'Noticias' },
+    ],
+  },
+  { href: '/contacto', label: 'Contacto' },
+];
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { href: '/', label: 'Inicio' },
-    { href: '/about', label: 'Acerca de EDUCCA' },
-    { href: '/promotors', label: 'Promotores Ambientales' },
-    { href: '/campanias-eventos', label: 'Campañas y Eventos' },
-    { href: '/espacios-educativos', label: 'Espacios Educativos' },
-    { href: '/recursos', label: 'Recursos' },
-    { href: '/galeria', label: 'Galería' },
-    { href: '/noticias', label: 'Noticias' },
-    { href: '/contacto', label: 'Contacto' },
-  ];
-
   return (
     <nav className="fixed top-0 w-full z-50 bg-green-700 text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-[80px]">
+      <div className="max-w-[1425px] mx-auto">
+        <div className="flex justify-between h-[80px] items-center">
           {/* Logo */}
-          <div className="flex items-center">
-            <NavLink to="/" className="flex items-center">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
-              <span className="ml-3 text-xl font-bold text-primary">EDUCCA</span>
-            </NavLink>
-          </div>
+          <NavLink to="/" className="flex items-center">
+            <img src="/logo.png" alt="Logo EDUCCA" className="h-[60px] w-auto mr-3" />
+          </NavLink>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.href}
-                to={item.href}
-                className={({ isActive }) =>
-                  `px-3 py-2 text-sm font-medium transition border-b-2 border-transparent duration-300 ${isActive
-                    ? 'text-yellow-400 border-yellow-400'
-                    : 'hover:text-yellow-300 hover:border-yellow-300'
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+          <div className="hidden md:flex items-center gap-4">
+            {navItems.map((item) =>
+              item.children ? (
+                <div key={item.label} className="relative group">
+                  <span className="px-3 py-2 text-sm font-medium cursor-pointer border-b-2 border-transparent group-hover:border-yellow-300 group-hover:text-yellow-300 transition">
+                    {item.label}
+                  </span>
+                  <div className="absolute left-0 mt-2 w-48 bg-green-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-200 z-50">
+                    {item.children.map((subItem) => (
+                      <NavLink
+                        key={subItem.href}
+                        to={subItem.href}
+                        className={({ isActive }) =>
+                          `block px-4 py-2 text-sm hover:bg-green-900 transition ${isActive ? 'text-yellow-300' : 'text-white'
+                          }`
+                        }
+                      >
+                        {subItem.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <NavLink
+                  key={item.href}
+                  to={item.href}
+                  className={({ isActive }) =>
+                    `px-3 py-2 text-sm font-medium transition border-b-2 border-transparent duration-300 ${isActive
+                      ? 'text-yellow-400 border-yellow-400'
+                      : 'hover:text-yellow-300 hover:border-yellow-300'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              )
+            )}
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md hover:bg-primary/80 transition"
@@ -69,24 +99,45 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-green-800">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
+        <div className="md:hidden bg-green-800 px-4 pb-4 space-y-2">
+          {navItems.map((item) =>
+            item.children ? (
+              <div key={item.label}>
+                <span className="block text-white font-semibold py-2">{item.label}</span>
+                <div className="ml-4 space-y-1">
+                  {item.children.map((subItem) => (
+                    <NavLink
+                      key={subItem.href}
+                      to={subItem.href}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `block px-3 py-2 rounded-md text-sm transition duration-300 ${isActive
+                          ? 'bg-green-900 text-yellow-300'
+                          : 'hover:bg-green-900 hover:text-yellow-300 text-white'
+                        }`
+                      }
+                    >
+                      {subItem.label}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            ) : (
               <NavLink
                 key={item.href}
                 to={item.href}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block px-3 py-2 rounded-md text-base font-medium transition duration-300 ${isActive
+                  `block px-3 py-2 rounded-md text-sm font-medium transition duration-300 ${isActive
                     ? 'bg-green-900 text-yellow-300'
-                    : 'hover:bg-green-900 hover:text-yellow-300'
+                    : 'hover:bg-green-900 hover:text-yellow-300 text-white'
                   }`
                 }
               >
                 {item.label}
               </NavLink>
-            ))}
-          </div>
+            )
+          )}
         </div>
       )}
     </nav>
