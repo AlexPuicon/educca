@@ -1,7 +1,7 @@
 import Card from "../../shared/components/Card";
 import SectionTitle from "../../shared/components/SectionTitle";
 import Tabs from "../../shared/components/Tabs";
-import GraficoS1 from "./components/graficoS1"; 
+import GraficoS1 from "./components/GraficoS1"; 
 
 
 const About = () => {
