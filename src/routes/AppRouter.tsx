@@ -11,6 +11,7 @@ const LoadingFallback = () => <div className="min-w-screen min-h-screen bg-gray-
 const Home = React.lazy(() => import("../features/home/Home"));
 const About = React.lazy(() => import("../features/about/About"));
 const Promotors = React.lazy(() => import("../features/promotors/Promotors"));
+const Campaign = React.lazy(() => import("../features/campaign/Campaign"));
 
 const withSuspense = (Component: React.ReactNode) => (
     <Suspense fallback={<LoadingFallback />}>{Component}</Suspense>
@@ -33,6 +34,10 @@ export const AppRouter: RouteObject[] = [
             {
                 path: "promotors",
                 element: withSuspense(<Promotors />),
+            },
+                        {
+                path: "campaign",
+                element: withSuspense(<Campaign />),
             },
         ],
     },

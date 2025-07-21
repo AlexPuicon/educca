@@ -14,11 +14,9 @@ const navItems = [
   {
     label: 'Contenido',
     children: [
-      { href: '/campanias-eventos', label: 'Campañas y Eventos' },
+      { href: '/campaign', label: 'Campañas y Eventos' },
       { href: '/espacios-educativos', label: 'Espacios Educativos' },
-      { href: '/recursos', label: 'Recursos' },
       { href: '/galeria', label: 'Galería' },
-      { href: '/noticias', label: 'Noticias' },
     ],
   },
   { href: '/contacto', label: 'Contacto' },

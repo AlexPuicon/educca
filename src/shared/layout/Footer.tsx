@@ -28,19 +28,19 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Síguenos</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-green-300 transition duration-300">
+              <a href="https://www.facebook.com/MPTambopata" className="hover:text-green-300 transition duration-300">
                 <span className="sr-only">Facebook</span>
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-8 h-8" />
               </a>
-              <a href="#" className="hover:text-green-300 transition duration-300">
-                <span className="sr-only">Twitter</span>
+              <a href="www.instagram.com/mptambopata/#" className="hover:text-green-300 transition duration-300">
+                <span className="sr-only">TikTok</span>
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-8 h-8" />
               </a>
-              <a href="#" className="hover:text-green-300 transition duration-300">
+              <a href="www.instagram.com/mptambopata/" className="hover:text-green-300 transition duration-300">
                 <span className="sr-only">Instagram</span>
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-8 h-8" />
               </a>
-              <a href="#" className="hover:text-green-300 transition duration-300">
+              <a href="https://www.youtube.com/@mptambopata" className="hover:text-green-300 transition duration-300">
                 <span className="sr-only">YouTube</span>
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-8 h-8" />
               </a>

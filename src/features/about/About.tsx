@@ -2,6 +2,7 @@ import Card from "../../shared/components/Card";
 import SectionTitle from "../../shared/components/SectionTitle";
 import Tabs from "../../shared/components/Tabs";
 import GraficoS1 from "./components/GraficoS1"; 
+import GraficoS2 from "./components/GraficoS2";
 
 
 const About = () => {
@@ -12,10 +13,9 @@ const About = () => {
       content: (
         <div>
           <p className="mb-4">
-            Programa dirigido a instituciones educativas para integrar la educación ambiental en el currículo escolar
-            y promover prácticas sostenibles.
+            orienta a construccion eculturas y modos de vida sostenibles en el ámbito formal, a travéz de la formación de Promotores Ambientales Escolares (PAE).
           </p>
-          <h3 className="text-xl font-semibold mb-4">Logros 2025</h3>
+          <h3 className="text-xl font-semibold mb-4">Formación de promotores ambientales escolares - PAE</h3>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white">
               <thead>
@@ -27,11 +27,11 @@ const About = () => {
               <tbody>
                 <tr className="bg-gray-50">
                   <td className="py-3 px-4 border-b border-gray-200">PAE formados</td>
-                  <td className="py-3 px-4 border-b border-gray-200">120</td>
+                  <td className="py-3 px-4 border-b border-gray-200">338</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-b border-gray-200">Docentes capacitados</td>
-                  <td className="py-3 px-4 border-b border-gray-200">350</td>
+                  <td className="py-3 px-4 border-b border-gray-200">20</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="py-3 px-4 border-b border-gray-200">Eventos realizados</td>
@@ -53,15 +53,14 @@ const About = () => {
       content: (
         <div>
           <p className="mb-4">
-            Iniciativas para involucrar a la comunidad en la protección ambiental a través de talleres,
-            proyectos y actividades participativas.
+            Promueve valores ambientales para mejorar la calidad de vida de las personas, a través del diseño e implementación de espacios públicos que educan ambientalmente:
           </p>
-          <h3 className="text-xl font-semibold mb-4">Proyectos Clave</h3>
+          <h3 className="text-xl font-semibold mb-4">Actividades</h3>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Programa de reciclaje comunitario</li>
-            <li>Huertos urbanos sostenibles</li>
-            <li>Campañas de limpieza de ríos</li>
-            <li>Talleres de manejo de residuos sólidos</li>
+            <li>Diseño e implementación de espacios públicos que educan ambientalmente</li>
+            <li>Diseño e implementación de campañas informativas y eventos</li>
+            <li>Formación de promotores ambientales juveniles - PAJ</li>
+            <li>Formación de promotores ambientales comunitarios - PAC</li>
             <li>Capacitaciones en agricultura ecológica</li>
           </ul>
         </div>
@@ -120,6 +119,16 @@ const About = () => {
       men: null
     }
   ];
+    // Datos para el gráfico de presupuesto
+  const budgetData = [
+    { label: 'Formación PAE', value: 36693 },
+    { label: 'Espacios Públicos', value: 28781 },
+    { label: 'Campañas Informativas', value: 107805 },
+    { label: 'Formación PAJ', value: 1914 },
+    { label: 'Formación PAC', value: 3694 }
+  ];
+  
+  const budgetTotal = 178887;
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -195,7 +204,7 @@ const About = () => {
         <p className="text-lg text-gray-700 mb-6">
           Tambopata enfrenta desafíos ambientales cruciales que requieren nuestra atención y acción inmediata para asegurar un futuro sostenible:
         </p>
-         <h2 className="text-3xl font-semibold text-gray-800 mb-4 section-title">Retos Ambientales</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-4 section-title">Retos Ambientales</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <Card className="p-6 hover:shadow-lg transition duration-300">
             <h3 className="text-2xl font-semibold mb-2">Pérdida de diversidad biológica</h3>
@@ -229,8 +238,73 @@ const About = () => {
             <h3 className="text-2xl font-semibold mb-2">Sensibilización y Educación Ambiental</h3>
             <p className="text-gray-700">Fomentamos la conciencia y participación ciudadana a través de campañas masivas, capacitaciones y talleres que empoderan a la comunidad para adoptar prácticas ecoamigables.</p>
           </Card>
-        </div>
-        
+          
+          </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="overflow-x-auto rounded-lg shadow-md">
+                <h2 className="text-3xl font-semibold text-gray-800 mb-4 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-green-600 after:rounded-full">
+                Presupuesto del Programa 2025
+                </h2>
+                <p className="text-lg leading-relaxed text-gray-700 mb-6">
+                  Para el año 2025, el Programa EDUCCA cuenta con un presupuesto total de <strong className="text-green-600">S/ 178,887.00</strong>. Este monto es crucial para la ejecución de todas las actividades planificadas y para alcanzar nuestras metas de impacto ambiental.
+                </p>
+                <div className="overflow-x-auto rounded-lg shadow-md">
+                  {/* ... tabla de presupuesto ... */}
+                  <table className="min-w-full bg-white">
+                    <thead>
+                      <tr className="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                        <th className="py-3 px-6 text-left">Línea de Acción / Concepto</th>
+                        <th className="py-3 px-6 text-right">Costo (S/)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <td className="py-3 px-6 text-left font-semibold text-green-700">Línea de acción 1: Educación ambiental escolar</td>
+                        <td className="py-3 px-6 text-right font-semibold text-green-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <td className="py-3 px-6 text-left pl-10">1.1 Formación de promotores ambientales escolares</td>
+                        <td className="py-3 px-6 text-right">36,693.00</td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100 bg-gray-50">
+                        <td className="py-3 px-6 text-left font-bold">SUB TOTAL LÍNEA 1</td>
+                        <td className="py-3 px-6 text-right font-bold">36,693.00</td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <td className="py-3 px-6 text-left font-semibold text-blue-700">Línea de acción 2: Educación ambiental comunitaria</td>
+                        <td className="py-3 px-6 text-right font-semibold text-blue-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <td className="py-3 px-6 text-left pl-10">2.1 Diseño e implementación de espacios públicos que educan ambientalmente</td>
+                        <td className="py-3 px-6 text-right">28,781.00</td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <td className="py-3 px-6 text-left pl-10">2.2 Diseño e implementación de campañas informativas y eventos</td>
+                        <td className="py-3 px-6 text-right">107,805.00</td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <td className="py-3 px-6 text-left pl-10">2.3 Formación de promotores ambientales juveniles</td>
+                        <td className="py-3 px-6 text-right">1,914.00</td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <td className="py-3 px-6 text-left pl-10">2.4 Formación de promotores ambientales comunitarios</td>
+                        <td className="py-3 px-6 text-right">3,694.00</td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-100 bg-gray-50">
+                        <td className="py-3 px-6 text-left font-bold">SUB TOTAL LÍNEA 2</td>
+                        <td className="py-3 px-6 text-right font-bold">142,194.00</td>
+                      </tr>
+                      <tr className="bg-green-600 text-white font-bold">
+                        <td className="py-3 px-6 text-left text-lg">TOTAL GENERAL</td>
+                        <td className="py-3 px-6 text-right text-lg">178,887.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>          
+                
+              </div>
+                <GraficoS2 data={budgetData} total={budgetTotal} />
+            </div>
       </section>
       <section>
         <h2 className="text-3xl font-bold text-center mb-8">Líneas de Acción</h2>
