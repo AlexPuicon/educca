@@ -61,7 +61,6 @@ const About = () => {
             <li>Diseño e implementación de campañas informativas y eventos</li>
             <li>Formación de promotores ambientales juveniles - PAJ</li>
             <li>Formación de promotores ambientales comunitarios - PAC</li>
-            <li>Capacitaciones en agricultura ecológica</li>
           </ul>
         </div>
       ),
